@@ -1,13 +1,16 @@
 * {
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
 html {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
 }
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: $font-main;
+  color: $primary;
 }
 h1 {
   margin: 0;
