@@ -2,15 +2,6 @@
   font-size: $font-size-12;
   line-height: $line-height-12;
   letter-spacing: $letter-spacing-12;
-
-  //   @if ($color ≠ false) {
-  //     color: $color;
-  //   }
-
-  //   유효성 검사
-  //   @if (type-of($color) = color) {
-  //     color: $color;
-  //   }
 }
 @mixin text-style-13() {
   font-size: $font-size-13;
@@ -61,8 +52,3 @@
     color: $color;
   }
 }
-
-// test
-// p {
-//   @include text-style(14, $primary);
-// }
