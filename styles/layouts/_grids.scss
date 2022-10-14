@@ -1,28 +1,28 @@
 /*
 * MOBILE (<768px)
-* fixture : sm
-* of columns : 4
-* unit : 100% - (5px * 2) - 20px
-* gutter : 20px
-* margin : 5px
-* container-size : 100% - (5px * 2)
+* fixture                 sm
+* of columns              4
+* unit                    00% - (5px * 2) - 20px
+* gutter                  20px
+* margin                  5px
+* container-size          100% - (5px * 2)
 *
 * TABLET (≥768px)
-* fixture : md
-* of columns : 12
-* gutter : 20px
-* margin : 30px
-* container-size : 100% - (30px * 2)
-* max-container-size : 960px
+* fixture                 md
+* of columns              12
+* gutter                  20px
+* margin                  30px
+* container-size          100% - (30px * 2)
+* max-container-size      960px
 *
 * DESK (≥1200px)
-* fixture : lg
-* of columns : 12
-* unit: 75px
-* gutter : 20px
-* margin : auto
-* container-size : 1140px
-* max-container-size : 1140px
+* fixture                 lg
+* of columns              12
+* unit                    75px
+* gutter                  20px
+* margin                  auto
+* container-size          1140px
+* max-container-size      1140px
 */
 
 $gutter: 20px;
@@ -30,12 +30,10 @@ $gutter: 20px;
 $sm-columns: 4;
 $sm-margin: 5px;
 
-$md-breakpoint: 768px;
 $md-columns: 12;
 $md-margin: 30px;
 $md-max-container: 960px + ($md-margin * 2);
 
-$lg-breakpoint: 1200px;
 $lg-columns: 12;
 $lg-unit: 75px;
 $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
@@ -64,7 +62,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
   }
 }
 
-@media screen and (min-width: $md-breakpoint) {
+@include responsive(T) {
   .container {
     max-width: $md-max-container;
     padding: 0 $md-margin;
@@ -77,7 +75,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
   }
 }
 
-@media screen and (min-width: $lg-breakpoint) {
+@include responsive(D) {
   .container {
     max-width: $lg-max-container;
     padding: 0;
