@@ -1,98 +1,96 @@
 .gnb {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  border-bottom: 1px solid $border;
 
-  .button-group {
-    @include inline-flexbox(start, center);
+  &-wrapper {
+    @include flexbox(between, center);
+    height: 50px;
   }
-  .gnb-icon-button {
+
+  &-right {
+    .button-group {
+      @include inline-flexbox(end, center);
+    }
+  }
+
+  .logo {
+    @include position-center(absolute);
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      height: 20px;
+    }
+  }
+
+  &-icon-button {
     @include flexbox(center, center);
     width: 32px;
     height: 32px;
-    margin-left: 4px;
+    font-size: 24px;
+    color: $secondary;
+  }
 
-    i {
-      font-size: 24px;
-      color: $secondary;
+  &-menu-button {
+    color: $blue;
+  }
+
+  &-search-button {
+    margin-right: 4px;
+  }
+
+  @include responsive(T) {
+    &-wrapper {
+      height: 80px;
     }
-  }
-}
 
-.logo {
-  @include position-center(absolute);
-
-  a {
-    display: block;
-    height: 20px;
-  }
-
-  img {
-    display: block;
-    height: 100%;
-  }
-}
-
-.gnb-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-
-  .gnb-left {
-    flex-grow: 1;
-  }
-}
-
-@include responsive(T) {
-  .gnb-wrapper {
-    height: 80px;
-  }
-  .gnb-left {
-    @include flexbox(start, center);
-  }
-  .gnb-right {
-    @include flexbox(start, center);
-
-    .button-group {
-      margin-right: 24px;
+    &-left {
+      @include flexbox(start, center);
     }
-  }
-  .logo {
-    position: static;
-    transform: translate(0, 0);
 
-    a {
-      height: 24px;
-    }
-  }
+    &-right {
+      @include flexbox(end, center);
 
-  .gnb-nav {
-    margin-left: 32px;
-  }
+      .button-group {
+        margin-right: 24px;
 
-  .gnb-nav-list {
-    @include flexbox(start, center);
+        .gnb-icon-button {
+          margin-right: 8px;
 
-    .gnb-nav-item {
-      margin-right: 24px;
-      @include text-style(18);
-      font-weight: 700;
-
-      &:last-child {
-        margin-right: 0;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
       }
+    }
 
-      &.is-active {
-        color: $blue;
+    .logo {
+      position: static;
+      transform: none;
+      margin-right: 32px;
+
+      img {
+        height: 24px;
+      }
+    }
+
+    .btn-fill-primary {
+      width: 88px;
+      i {
+        margin-left: 4px;
       }
     }
   }
-}
-@include responsive(D) {
-  .input-group {
-    margin-right: 14px;
+
+  @include responsive(D) {
+    &-right {
+      .input-group {
+        width: 264px;
+        margin-right: 14px;
+      }
+    }
   }
 }
