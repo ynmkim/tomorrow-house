@@ -13,6 +13,12 @@
     }
   }
 
+  &-icon-button {
+    &.is-search {
+      margin-right: 4px;
+    }
+  }
+
   .logo {
     @include position-center(absolute);
 
@@ -24,22 +30,6 @@
       display: block;
       height: 20px;
     }
-  }
-
-  &-icon-button {
-    @include flexbox(center, center);
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-    color: $secondary;
-  }
-
-  &-menu-button {
-    color: $blue;
-  }
-
-  &-search-button {
-    margin-right: 4px;
   }
 
   @include responsive(T) {
