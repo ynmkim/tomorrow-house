@@ -1,0 +1,98 @@
+.gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .button-group {
+    @include inline-flexbox(start, center);
+  }
+  .gnb-icon-button {
+    @include flexbox(center, center);
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+
+    i {
+      font-size: 24px;
+      color: $secondary;
+    }
+  }
+}
+
+.logo {
+  @include position-center(absolute);
+
+  a {
+    display: block;
+    height: 20px;
+  }
+
+  img {
+    display: block;
+    height: 100%;
+  }
+}
+
+.gnb-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+
+  .gnb-left {
+    flex-grow: 1;
+  }
+}
+
+@include responsive(T) {
+  .gnb-wrapper {
+    height: 80px;
+  }
+  .gnb-left {
+    @include flexbox(start, center);
+  }
+  .gnb-right {
+    @include flexbox(start, center);
+
+    .button-group {
+      margin-right: 24px;
+    }
+  }
+  .logo {
+    position: static;
+    transform: translate(0, 0);
+
+    a {
+      height: 24px;
+    }
+  }
+
+  .gnb-nav {
+    margin-left: 32px;
+  }
+
+  .gnb-nav-list {
+    @include flexbox(start, center);
+
+    .gnb-nav-item {
+      margin-right: 24px;
+      @include text-style(18);
+      font-weight: 700;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.is-active {
+        color: $blue;
+      }
+    }
+  }
+}
+@include responsive(D) {
+  .input-group {
+    margin-right: 14px;
+  }
+}
