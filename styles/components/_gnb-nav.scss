@@ -6,6 +6,8 @@
   }
 
   &-nav-item {
+    flex-shrink: 0;
+
     a {
       display: block;
       padding: $padding;
