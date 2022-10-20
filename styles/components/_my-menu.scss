@@ -1,0 +1,65 @@
+.my-menu {
+  $tooltip-size: 10px;
+
+  position: relative;
+
+  &-content {
+    @include position-center-x(absolute);
+    top: 50px;
+
+    // tootip 세모
+    &::before,
+    &::after {
+      z-index: 100;
+      @include position-center-x(absolute);
+      top: -#{$tooltip-size * 2};
+      width: 0;
+      height: 0;
+      border-top: $tooltip-size solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: $tooltip-size solid transparent;
+      border-left: 8px solid transparent;
+      content: '';
+    }
+
+    &::before {
+      border-bottom-color: $border;
+    }
+
+    &::after {
+      top: -#{$tooltip-size * 2 - 2px};
+      border-bottom-color: $white;
+    }
+  }
+
+  &-list {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid $border;
+    border-radius: 4px;
+    background-color: $white;
+    box-shadow: $dropdown-shadow;
+  }
+
+  &-item {
+    a,
+    button {
+      display: block;
+      padding: 10px 8px;
+      border-radius: 2px;
+      @include text-style(16, $primary);
+    }
+
+    button {
+      width: 100%;
+      text-align: left;
+    }
+
+    &:hover {
+      a,
+      button {
+        background-color: $background;
+      }
+    }
+  }
+}
