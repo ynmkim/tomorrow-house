@@ -1,11 +1,33 @@
 .my-menu {
   $tooltip-size: 10px;
+  $button-size: 32px;
 
   position: relative;
 
+  &-button {
+    width: $button-size;
+    height: $button-size;
+    border: 3px solid $white;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: border-color 200ms ease-in-out;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover,
+    &.is-active {
+      border-color: $blue;
+    }
+  }
+
   &-content {
     @include position-center-x(absolute);
-    top: 50px;
+    top: $button-size + $tooltip-size + 8px;
 
     // tootip 세모
     &::before,
