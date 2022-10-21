@@ -24,10 +24,6 @@
       }
     }
 
-    .drawer-menu-content {
-      border-bottom: 1px solid $border;
-    }
-
     .drawer-menu-list {
       padding-bottom: $drawer-menu-list-padding;
     }
@@ -57,7 +53,6 @@
     width: 100%;
     height: 54px;
     padding: 0 8px;
-    border-bottom: 1px solid $border;
     @include text-style(18, $primary);
     font-weight: 700;
     transition: color 200ms ease-in-out;
