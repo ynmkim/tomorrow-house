@@ -1,0 +1,65 @@
+body {
+  background-color: black;
+}
+.sidebar {
+  width: 240px;
+  padding: 32px 20px;
+  background-color: $white;
+
+  &-header {
+    padding: 0 12px;
+    border-bottom: 1px solid $border;
+
+    .logo {
+      @include flexbox(start, center);
+
+      a {
+        display: block;
+      }
+
+      img {
+        display: block;
+        height: 20px;
+      }
+    }
+  }
+
+  &-user,
+  &-auth {
+    @include flexbox(start, center);
+    height: 88px;
+  }
+
+  &-user {
+    a {
+      width: 100%;
+      @include flexbox(start, center);
+      @include text-style(14, $primary);
+      font-weight: 700;
+    }
+
+    .avatar-24 {
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    .username {
+      flex-grow: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &-auth {
+    justify-content: space-between;
+
+    a {
+      width: 84px;
+    }
+  }
+}
+
+.drawer-menu-button {
+}
