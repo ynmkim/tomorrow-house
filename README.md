@@ -71,7 +71,31 @@
 </div>
 ```
 
-## 2. Reponsive Class
+## 2. SIDEBAR
+
+- 로그인을 하지 않은 경우
+
+```html
+<div class="sidebar-auth">
+  <a href="/" class="btn-outlined btn-40"> 로그인 </a>
+  <a href="/" class="btn-fill-primary btn-40"> 회원가입 </a>
+</div>
+```
+
+- 로그인을 한 경우
+
+```html
+<div class="sidebar-user">
+  <a href="/">
+    <div class="avatar-24">
+      <img src="./assets/img/img-user-01.jpg" alt="사달라 아저씨" />
+    </div>
+    <strong class="username">사달라</strong>
+  </a>
+</div>
+```
+
+## 3. Reponsive Class
 
 | Mobile | Tablet | Deskop | class        |
 | ------ | ------ | ------ | ------------ |
