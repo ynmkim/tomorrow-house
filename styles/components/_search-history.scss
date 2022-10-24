@@ -1,0 +1,42 @@
+.search-history {
+  &-header {
+    @include flexbox(between, center);
+    margin-bottom: 8px;
+
+    .title,
+    button {
+      @include text-style(13, $secondary);
+      font-weight: 400;
+    }
+  }
+
+  &-item {
+    position: relative;
+    @include flexbox(between, center);
+
+    .word-button {
+      flex-grow: 1;
+      padding: 10px 32px 10px 8px;
+      @include text-style(16, $primary);
+      text-align: left;
+    }
+
+    .delete-button {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      width: 32px;
+      height: 32px;
+
+      .ic-close {
+        font-size: 16px;
+        color: $tertiary;
+      }
+    }
+  }
+
+  .placeholder {
+    padding: 10px 8px;
+    @include text-style(16, $tertiary);
+  }
+}

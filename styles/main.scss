@@ -18,11 +18,13 @@
 @import './layouts/gnb';
 @import './layouts/sidebar';
 @import './layouts/overlay';
+@import './layouts/search-modal';
 
 @import './components/gnb-nav';
 @import './components/gnb-icon-buttons';
 @import './components/my-menu';
 @import './components/drawer-menu';
+@import './components/search-history';
 
 @import './modules/icons';
 @import './modules/tags';
