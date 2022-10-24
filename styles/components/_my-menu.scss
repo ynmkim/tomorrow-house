@@ -4,6 +4,18 @@
 
   position: relative;
 
+  &.is-active {
+    .my-menu-button {
+      border-color: $blue;
+    }
+
+    .my-menu-content {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
   &-button {
     width: $button-size;
     height: $button-size;
@@ -21,8 +33,7 @@
       object-fit: cover;
     }
 
-    &:hover,
-    &.is-active {
+    &:hover {
       border-color: $blue;
     }
   }
@@ -30,6 +41,11 @@
   &-content {
     @include position-center-x(absolute);
     top: $button-size + $tooltip-size + 8px;
+    transform: translate3d(-50%, 10px, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 200ms ease-in-out, opacity 200ms ease-in-out,
+      transform 200ms ease-in-out;
 
     // tootip 세모
     &::before,
