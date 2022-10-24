@@ -93,10 +93,34 @@
   }
 
   @include responsive(D) {
-    &-right {
+    &-search {
+      position: relative;
+      width: 264px;
+      margin-right: 14px;
+
       .input-group {
-        width: 264px;
-        margin-right: 14px;
+        width: 100%;
+      }
+
+      .search-history {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 8px);
+        display: none;
+        width: 100%;
+        padding: 16px 8px 8px;
+        border: 1px solid $border;
+        border-radius: 4px;
+        background-color: $white;
+        box-shadow: $dropdown-shadow;
+
+        &-header {
+          padding: 0 8px;
+        }
+
+        &.is-active {
+          display: block;
+        }
       }
     }
   }
