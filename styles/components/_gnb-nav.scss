@@ -6,14 +6,13 @@
   }
 
   &-nav-item {
-    flex-shrink: 0;
-
     a {
       display: block;
       padding: $padding;
       margin-right: 24px - ($padding * 2);
       @include text-style(18, $primary);
       font-weight: 700;
+      white-space: nowrap;
     }
 
     &:last-child {
