@@ -1,10 +1,11 @@
 .gnb {
   position: relative;
   border-bottom: 1px solid $border;
+  background-color: $white;
 
   &-wrapper {
     @include flexbox(between, center);
-    height: 50px;
+    height: $gnb-height-sm - 1px;
   }
 
   &-right {
@@ -34,7 +35,7 @@
 
   @include responsive(T) {
     &-wrapper {
-      height: 80px;
+      height: $gnb-height-md - 1px;
     }
 
     &-left {
