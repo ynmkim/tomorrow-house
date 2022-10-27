@@ -40,7 +40,60 @@
   }
 
   img {
-    display: 100%;
+    display: block;
     width: 100%;
+  }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0 0 8px 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    &-thumbnail {
+      position: static;
+      transform: none;
+    }
+
+    .thumbnail-item {
+      button {
+        width: 56px;
+        height: 56px;
+        margin: 0 8px 0 0;
+        border-radius: 4px;
+        overflow: hidden;
+        opacity: 1;
+        transition: scale 200ms ease-in-out;
+      }
+
+      &:last-child button {
+        margin-right: 0;
+      }
+
+      img {
+        display: block;
+      }
+
+      &.tns-nav-active {
+        button {
+          position: relative;
+          transform: none;
+
+          &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid $blue;
+            border-radius: 4px;
+            content: '';
+          }
+        }
+      }
+    }
   }
 }
