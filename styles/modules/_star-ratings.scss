@@ -1,31 +1,27 @@
-%star-rating-base {
-  @include flexbox(start, center);
+// %star-rating-base {
+//   @include flexbox(start, center);
 
-  .ic-star {
-    color: $border;
+//   .ic-star {
+//     color: $border;
 
-    &.is-active {
-      color: $blue;
-    }
-  }
-}
+//     &.is-active {
+//       color: $blue;
+//     }
+//   }
+// }
 
 .star-rating-13 {
-  @extend %star-rating-base;
-  font-size: 13px;
+  @include star-rating(13);
 }
 
 .star-rating-16 {
-  @extend %star-rating-base;
-  font-size: 16px;
+  @include star-rating(16);
 }
 
 .star-rating-20 {
-  @extend %star-rating-base;
-  font-size: 20px;
+  @include star-rating(20);
 }
 
 .star-rating-24 {
-  @extend %star-rating-base;
-  font-size: 24px;
+  @include star-rating(24);
 }
