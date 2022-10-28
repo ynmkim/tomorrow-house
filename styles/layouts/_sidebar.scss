@@ -57,9 +57,7 @@
 
     .username {
       flex-grow: 1;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      @include ellipsis(1);
     }
   }
 
