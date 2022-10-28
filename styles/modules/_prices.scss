@@ -1,11 +1,11 @@
 %price-base {
   @include inline-flexbox(start, center);
 
-  .amount {
+  .number {
     font-family: $font-price;
     line-height: 1;
   }
-  .currency {
+  .won {
     font-family: $font-main;
   }
 }
@@ -16,38 +16,38 @@
   @extend %price-base;
   color: $dark;
 
-  .amount {
+  .number {
     font-weight: 700;
     letter-spacing: -0.02em;
   }
-  .currency {
+  .won {
     font-weight: 700;
   }
 }
 
 .price-16 {
-  .amount {
+  .number {
     font-size: 16px;
   }
-  .currency {
+  .won {
     @include text-style(14);
   }
 }
 
 .price-20 {
-  .amount {
+  .number {
     font-size: 20px;
   }
-  .currency {
+  .won {
     @include text-style(16);
   }
 }
 
 .price-32 {
-  .amount {
+  .number {
     font-size: 32px;
   }
-  .currency {
+  .won {
     font-size: 28px;
     font-weight: 700;
     line-height: 32px;
@@ -55,18 +55,32 @@
   }
 }
 
-.price-off {
+.price-original {
   @extend %price-base;
   color: $secondary;
 
-  .amount {
+  .number {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: -0.01em;
     text-decoration: line-through;
   }
-  .currency {
+  .won {
     @include text-style(14);
     font-weight: 400;
+  }
+}
+
+.price-discount {
+  @include inline-flexbox(start, center);
+  line-height: 1.2;
+  font-weight: bold;
+  color: $blue;
+
+  .number {
+    font-family: $font-price;
+  }
+  .percent {
+    font-family: $font-main;
   }
 }
