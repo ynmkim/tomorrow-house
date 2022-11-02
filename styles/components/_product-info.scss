@@ -4,8 +4,18 @@
   &-header {
     margin-bottom: 16px;
 
-    .info-brand {
-      display: block;
+    .title {
+      margin-bottom: 4px;
+
+      span {
+        display: block;
+        @include text-style(18, $dark);
+        font-weight: 400;
+        @include ellipsis(2);
+      }
+    }
+
+    .brand {
       @include text-style(13, $blue);
       font-weight: 700;
 
@@ -14,17 +24,12 @@
       }
     }
 
-    .info-title {
-      margin-bottom: 4px;
-      @include text-style(18, $dark);
-      font-weight: 400;
-    }
-
-    .info-review {
+    .review {
       @include flexbox(start, center);
 
-      &-icon {
+      .star-rating {
         margin-right: 8px;
+        @include star-rating(13px);
       }
 
       &-text {
@@ -35,11 +40,11 @@
   }
 
   &-price {
-    .info-price {
+    .price {
       @include flexbox(start, center);
     }
 
-    .info-discount {
+    .price-discount {
       margin-bottom: 12px;
       @include inline-flexbox(start, center);
 
@@ -48,7 +53,7 @@
       }
     }
 
-    .info-point {
+    .point {
       margin-bottom: 16px;
       @include text-style(13, $secondary);
 
@@ -68,6 +73,82 @@
       display: block;
       margin-bottom: 2px;
       @include text-style(16, $primary);
+    }
+  }
+
+  @include responsive(T) {
+    padding: 0;
+
+    &-header {
+      .brand {
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+
+      .title {
+        margin-bottom: 8px;
+
+        span {
+          @include text-style(24);
+          @include ellipsis(3);
+        }
+      }
+
+      .review {
+        .star-rating {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-price {
+      .price-wrapper {
+        @include flexbox(start, end);
+        margin-bottom: 12px;
+      }
+
+      .discount-rate {
+        margin-right: 16px;
+        @include flexbox(start, end);
+
+        .number {
+          margin-bottom: 2px;
+          margin-right: 2px;
+          font-size: 44px;
+          line-height: 36px;
+        }
+
+        .percent {
+          font-size: 20px;
+          line-height: 1;
+        }
+      }
+
+      .price {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-discount {
+          margin: 0;
+
+          .price-32 {
+            margin-right: 8px;
+          }
+        }
+      }
+
+      .point {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-delivery {
+      padding: 16px 0 20px;
+      border-bottom: 1px solid $border;
+
+      span {
+        margin-bottom: 8px;
+      }
     }
   }
 }
