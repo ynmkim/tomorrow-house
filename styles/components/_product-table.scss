@@ -1,0 +1,39 @@
+.product-table {
+  $table-cell-padding: 12px;
+
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+
+  tr {
+    @include text-style(12, $primary);
+    border-bottom: 1px solid $border;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th,
+  td {
+    padding: $table-cell-padding;
+  }
+
+  th {
+    width: 112px;
+    font-weight: 400;
+    color: $secondary;
+  }
+
+  td {
+    padding-left: 0;
+  }
+
+  @include responsive(T) {
+    tr {
+      @include text-style(14);
+    }
+
+    th {
+      width: 164px;
+    }
+  }
+}
