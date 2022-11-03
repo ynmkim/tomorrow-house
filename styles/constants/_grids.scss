@@ -1,0 +1,41 @@
+/*
+* MOBILE (<768px)
+* fixture                 sm
+* of columns              4
+* unit                    00% - (5px * 2) - 20px
+* gutter                  20px
+* margin                  5px
+* container-size          100% - (5px * 2)
+*
+* TABLET (≥768px)
+* fixture                 md
+* of columns              12
+* gutter                  20px
+* margin                  30px
+* container-size          100% - (30px * 2)
+* max-container-size      960px
+*
+* DESK (≥1200px)
+* fixture                 lg
+* of columns              12
+* unit                    75px
+* gutter                  20px
+* margin                  auto
+* container-size          1140px
+* max-container-size      1140px
+*/
+
+$gutter: 20px;
+
+$sm-columns: 4;
+$sm-margin: 5px;
+
+$md-columns: 12;
+$md-margin: 30px;
+$md-max-container: 960px + ($md-margin * 2);
+
+$lg-columns: 12;
+$lg-unit: 75px;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+
+$grid-margin: 15px;
