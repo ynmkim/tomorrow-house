@@ -1,0 +1,20 @@
+.product-description {
+  padding-top: 20px;
+
+  figure {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .product-table {
+    margin-top: 20px;
+  }
+
+  @include responsive(T) {
+    .product-table {
+      margin-top: 40px;
+    }
+  }
+}
