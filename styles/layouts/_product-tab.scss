@@ -21,7 +21,7 @@
       font-weight: 700;
       white-space: nowrap;
 
-      .badge {
+      .count {
         margin-left: 4px;
         @include text-style(12, $secondary);
       }

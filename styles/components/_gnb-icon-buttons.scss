@@ -1,5 +1,5 @@
 .gnb-icon-button {
-  $badge-size: 16px;
+  $count-size: 16px;
 
   position: relative;
   @include flexbox(center, center);
@@ -30,14 +30,14 @@
     color: $primary;
   }
 
-  .badge {
+  .count {
     position: absolute;
     top: 0;
     right: 0;
-    min-width: $badge-size;
-    height: $badge-size;
+    min-width: $count-size;
+    height: $count-size;
     padding: 0 4px;
-    border-radius: $badge-size / 2;
+    border-radius: $count-size / 2;
     font-size: 10px;
     line-height: 16px;
     letter-spacing: -0.01em;

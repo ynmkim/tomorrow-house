@@ -56,7 +56,7 @@
     aria-label="장바구니, 5개의 상품이 담겨있습니다"
   >
     <i class="ic-cart"></i>
-    <strong class="badge">5</strong>
+    <strong class="count">5</strong>
   </a>
 
   <button
