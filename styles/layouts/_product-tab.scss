@@ -3,6 +3,7 @@
 
   position: sticky;
   top: $gnb-height-sm + $lnb-height-sm;
+  z-index: $product-tab-level;
   height: 40px;
   border-bottom: 1px solid $border;
   background-color: $white;
