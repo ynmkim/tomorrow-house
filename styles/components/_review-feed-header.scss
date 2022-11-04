@@ -1,0 +1,135 @@
+.review-feed-header {
+  @include flexbox(center, center);
+  height: 152px;
+  border-radius: 4px;
+  background-color: $background;
+
+  &::before {
+    order: 2;
+    display: block;
+    width: 1px;
+    height: 96px;
+    background-color: $border;
+    content: '';
+  }
+
+  .review-feed-rating,
+  .review-feed-graph {
+    flex: 1 1 0;
+  }
+
+  .review-feed-rating {
+    order: 1;
+    @include column-flexbox(center, center);
+
+    .rating {
+      display: block;
+      margin-bottom: 4px;
+      @include text-style(24, $dark);
+    }
+
+    .star-rating {
+      @include inline-flexbox(center, center);
+      font-size: 20px;
+      color: $blue;
+    }
+  }
+
+  .review-feed-graph {
+    order: 3;
+    text-align: center;
+
+    &-list {
+      display: inline-block;
+    }
+
+    &-item {
+      @include flexbox(start, center);
+      margin-bottom: 4px;
+      @include text-style(12, $secondary);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      dt {
+        margin-right: 4px;
+      }
+
+      dd {
+        @include flexbox(start, center);
+
+        .container-bar {
+          position: relative;
+          width: 70px;
+          height: 5px;
+          margin-right: 4px;
+          border-radius: (5px / 2);
+          background-color: $border;
+
+          .active-bar {
+            width: 50%;
+            height: 5px;
+            border-radius: (5px / 2);
+            background-color: $blue;
+            overflow: hidden;
+          }
+        }
+        .count {
+          font-weight: 400;
+        }
+      }
+
+      &.is-active {
+        dt,
+        .count {
+          font-weight: 700;
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    height: 148px;
+    // padding: 0 72px; NOTE : 어떤게 더 유연한 방식인지 고민!
+    justify-content: space-around; //NOTE : 어떤게 더 유연한 방식인지 고민!
+
+    &::before {
+      height: 72px;
+      // margin: 0 69px; //NOTE : 어떤게 더 유연한 방식인지 고민!
+    }
+
+    .review-feed-rating,
+    .review-feed-graph {
+      flex: 1 1 auto;
+    }
+
+    .review-feed-rating {
+      flex-direction: row-reverse;
+
+      .rating {
+        margin: 0 0 0 16px;
+      }
+
+      .star-rating {
+        font-size: 24px;
+      }
+    }
+
+    .review-feed-graph {
+      &-item {
+        dt {
+          margin-right: 8px;
+        }
+
+        dd {
+          .container-bar {
+            width: 180px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
