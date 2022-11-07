@@ -66,13 +66,15 @@
           margin-right: 4px;
           border-radius: (5px / 2);
           background-color: $border;
+          overflow: hidden;
 
           .filled-bar {
             width: 0;
             height: 5px;
             border-radius: (5px / 2);
             background-color: $blue;
-            overflow: hidden;
+            animation-name: slide-filled-bar;
+            animation-duration: 1000ms;
           }
         }
         .count {
@@ -131,5 +133,15 @@
         }
       }
     }
+  }
+}
+
+@keyframes slide-filled-bar {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
