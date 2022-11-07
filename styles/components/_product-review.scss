@@ -6,4 +6,18 @@
       border-bottom: 0;
     }
   }
+
+  .review-empty {
+    padding: 36px 0;
+    @include text-style(16, $secondary);
+    text-align: center;
+
+    strong {
+      color: $blue;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 16px 0;
+  }
 }
