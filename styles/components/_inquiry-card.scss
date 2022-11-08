@@ -26,10 +26,14 @@
             content: none;
           }
         }
+
+        &.is-answered {
+          color: $blue;
+        }
       }
     }
 
-    .authors {
+    .author {
       @include inline-flexbox(center, center);
       color: $tertiary;
 
@@ -51,11 +55,15 @@
   &-body {
     @include text-style(13, $primary);
 
-    .question {
-      @include flexbox(start, start);
+    .question,
+    .answer {
+      position: relative;
+      padding-left: 20px;
 
       .badge {
-        flex: 0 0 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
         font-weight: 700;
         color: $blue;
       }
@@ -65,6 +73,18 @@
           margin-right: 8px;
           font-size: 16px;
           color: $tertiary;
+        }
+      }
+    }
+
+    .answer {
+      margin-top: 12px;
+
+      .author {
+        margin-bottom: 4px;
+
+        time {
+          @include text-style(12, $tertiary);
         }
       }
     }
@@ -78,10 +98,13 @@
     &-body {
       @include text-style(16);
 
-      .question {
-        .badge {
-          flex: 0 0 24px;
-        }
+      .question,
+      .answer {
+        padding-left: 24px;
+      }
+
+      .answer {
+        margin-top: 16px;
       }
     }
   }
