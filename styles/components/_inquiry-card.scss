@@ -1,0 +1,80 @@
+.inquiry-card {
+  padding-bottom: 40px;
+
+  &-header {
+    margin-bottom: 8px;
+    @include text-style(12, $primary);
+
+    dl {
+      @include flexbox(start, center);
+      margin-bottom: 8px;
+
+      dd {
+        @include inline-flexbox(center, center);
+
+        &::after {
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          margin: 1px 4px 0;
+          background-color: $primary;
+          content: '';
+        }
+
+        &:last-child {
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+
+    .authors {
+      @include inline-flexbox(center, center);
+      color: $tertiary;
+
+      strong {
+        font-weight: 400;
+
+        &::after {
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          margin: -1px 4px;
+          background-color: $tertiary;
+          content: '';
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include text-style(13, $primary);
+
+    .question {
+      @include flexbox(start, start);
+
+      .badge {
+        flex: 0 0 20px;
+        font-weight: 700;
+        color: $blue;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-header {
+      margin-bottom: 16px;
+    }
+
+    &-body {
+      @include text-style(16);
+
+      .question {
+        .badge {
+          flex: 0 0 24px;
+        }
+      }
+    }
+  }
+}
