@@ -59,6 +59,14 @@
         font-weight: 700;
         color: $blue;
       }
+
+      p {
+        .ic-lock {
+          margin-right: 8px;
+          font-size: 16px;
+          color: $tertiary;
+        }
+      }
     }
   }
 
