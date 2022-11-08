@@ -11,7 +11,6 @@
 | X      | X      | O      | `.lg-only`   |
 | O      | X      | O      | `.md-hidden` |
 
-
 ## 2. GNB
 
 - 로그인을 하지 않은 경우
@@ -127,6 +126,30 @@
       첫 리뷰를 남겨주세요!<br />
       최대 <strong>500P</strong>를 드립니다.
     </p>
+  </div>
+</section>
+```
+
+## 5. Product Inquiry
+
+- 문의가 0개일 경우
+
+```html
+<section
+  class="product-section product-inquiry is-open"
+  id="product-inquiry"
+  role="tabpanel"
+>
+  <header class="product-section-header">
+    <h3 class="title">문의</h3>
+    <strong class="count" aria-label="0개">0</strong>
+    <a class="text-button" href="/">문의하기</a>
+    <button class="icon-button sm-only" type="button" aria-label="펼치기">
+      <i class="ic-chevron" aria-hidden></i>
+    </button>
+  </header>
+  <div class="product-section-content">
+    <p class="inquiry-empty">문의 내역이 없습니다.</p>
   </div>
 </section>
 ```
