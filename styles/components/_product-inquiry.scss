@@ -20,4 +20,16 @@
       }
     }
   }
+
+  .inquiry-empty {
+    padding: 48px 0;
+    @include text-style(16, $secondary);
+    text-align: center;
+  }
+
+  @include responsive(T) {
+    .inquiry-empty {
+      padding: 24px 0;
+    }
+  }
 }
