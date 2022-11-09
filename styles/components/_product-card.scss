@@ -1,0 +1,65 @@
+.product-card {
+  &-image {
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-text {
+    .brand {
+      display: block;
+      margin-bottom: 4px;
+      @include text-style(12, $secondary);
+    }
+
+    .title {
+      @include text-style(13, $dark);
+      line-height: 16px;
+      font-weight: 400;
+      @include ellipsis(2);
+    }
+
+    .price {
+      @include flexbox(start, center);
+      margin-bottom: 4px;
+      @include text-style(18);
+      font-weight: 700;
+
+      .discount-rate {
+        margin-right: 8px;
+        color: $blue;
+      }
+
+      .number {
+        color: $dark;
+      }
+    }
+
+    .review {
+      @include flexbox(start, center);
+      margin-bottom: 8px;
+      @include text-style(12);
+
+      .rating {
+        margin-right: 8px;
+        color: $primary;
+
+        i {
+          margin-right: 2px;
+          color: $blue;
+        }
+      }
+
+      .review-count {
+        color: $secondary;
+      }
+    }
+  }
+}
