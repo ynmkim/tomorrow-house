@@ -73,7 +73,6 @@
 
 .discount-rate {
   @include inline-flexbox(start, center);
-  line-height: 1.2;
   font-weight: bold;
   color: $blue;
 
