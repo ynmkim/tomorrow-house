@@ -61,7 +61,48 @@
     margin: 0;
 
     &-slider {
+      position: relative;
       margin-bottom: 6px;
+    }
+
+    &-controls {
+      @include flexbox(between, center);
+      @include position-center-y(absolute);
+      width: 100%;
+      padding: 0 52px;
+
+      button {
+        @include flexbox(center, center);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $white;
+        color: $primary;
+        transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+
+        i {
+          position: relative;
+          top: 1px;
+          font-size: 28px;
+        }
+
+        &.is-prev {
+          transform: rotate(90deg);
+        }
+
+        &.is-next {
+          transform: rotate(-90deg);
+        }
+
+        &:hover {
+          background-color: $blue;
+          color: $white;
+        }
+
+        &:disabled {
+          visibility: hidden;
+        }
+      }
     }
 
     &-thumbnail {
