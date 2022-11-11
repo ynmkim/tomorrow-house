@@ -1,4 +1,5 @@
 .global-footer {
+  margin-bottom: $product-floating-height;
   padding: 32px 0 40px;
   background-color: $background;
 
@@ -40,6 +41,8 @@
   }
 
   @include responsive(D) {
+    margin-bottom: 0;
+
     &-title {
       @include text-style(14);
     }

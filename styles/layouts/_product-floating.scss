@@ -1,0 +1,36 @@
+.product-floating {
+  @include flexbox(start, center);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: $product-floating-level;
+  width: 100%;
+  height: $product-floating-height;
+  padding: 4px;
+  background-color: $white;
+
+  button {
+    height: 48px;
+  }
+
+  .btn-ghost {
+    flex: 0 0 72px;
+    @include column-flexbox(center, center);
+
+    i {
+      font-size: 24px;
+      color: $primary;
+    }
+
+    .count {
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: -0.005em;
+      font-weight: 400;
+      color: $secondary;
+    }
+  }
+  .btn-fill-primary {
+    flex-grow: 1;
+  }
+}
