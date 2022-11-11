@@ -22,6 +22,12 @@
       color: $primary;
     }
 
+    &.is-active {
+      i {
+        color: $blue;
+      }
+    }
+
     .count {
       font-size: 10px;
       line-height: 16px;
@@ -30,6 +36,7 @@
       color: $secondary;
     }
   }
+
   .btn-fill-primary {
     flex-grow: 1;
   }
