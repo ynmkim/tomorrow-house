@@ -1,0 +1,56 @@
+.gallery-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+
+  &-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-content {
+    @include flexbox(start, center);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 54px;
+    padding: 0 16px;
+    background-color: rgba($black, 0.4);
+    @include text-style(16, $white);
+
+    .writer-link {
+      width: 100%;
+      @include flexbox(start, center);
+    }
+
+    .avatar-32 {
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .writer-name {
+      display: block;
+      flex-grow: 0;
+      margin-right: 8px;
+      // @include ellipsis(1); // 예외 적용
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+  }
+}
