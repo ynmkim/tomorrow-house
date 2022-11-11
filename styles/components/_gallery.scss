@@ -6,6 +6,9 @@
   }
 
   &-thumbnail {
+    overflow-x: auto;
+    @include no-scrollbar;
+
     .thumbnail-list {
       @include flexbox(start, center);
       margin-left: 2px;
@@ -19,6 +22,7 @@
       }
 
       button {
+        position: relative;
         width: 64px;
         height: 64px;
         border-radius: 4px;
@@ -30,11 +34,24 @@
           height: 100%;
           object-fit: cover;
         }
+
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 3px solid transparent;
+          border-radius: 4px;
+          content: '';
+        }
       }
 
       &.tns-nav-active {
         button {
-          border: 3px solid $blue;
+          &:after {
+            border-color: $blue;
+          }
         }
       }
     }
@@ -58,6 +75,16 @@
         button {
           width: 75px;
           height: 75px;
+
+          img {
+            transition: transform 200ms ease-in-out;
+          }
+
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+          }
         }
       }
     }
