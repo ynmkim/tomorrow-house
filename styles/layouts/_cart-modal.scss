@@ -1,0 +1,49 @@
+.cart-modal {
+  @include position-center(fixed);
+  z-index: $cart-modal-level;
+  display: none;
+  width: calc(100% - #{$grid-margin * 2});
+  max-width: 360px;
+  height: 230px;
+  padding: 40px 24px;
+  border-radius: 8px;
+  background-color: $white;
+  text-align: center;
+
+  &.is-active {
+    display: block;
+  }
+
+  &-title {
+    margin-bottom: 24px;
+    @include text-style(16, $dark);
+  }
+
+  .button-group {
+    a,
+    button {
+      width: 100%;
+    }
+
+    a {
+      margin-bottom: 8px;
+    }
+  }
+
+  @include responsive(T) {
+    padding: 40px 32px;
+
+    &-title {
+      margin-bottom: 16px;
+      @include text-style(18);
+    }
+
+    .button-group {
+      a,
+      button {
+        @include text-style(18);
+        height: 55px;
+      }
+    }
+  }
+}
