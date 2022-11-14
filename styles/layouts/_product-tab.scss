@@ -2,7 +2,7 @@
   position: sticky;
   top: $gnb-height-sm + $lnb-height-sm;
   z-index: $product-tab-level;
-  height: 40px;
+  height: $product-tab-height-sm;
   border-bottom: 1px solid $border;
   background-color: $white;
 
@@ -42,7 +42,7 @@
 
   @include responsive(T) {
     top: $gnb-height-md + $lnb-height-md;
-    height: 54px;
+    height: $product-tab-height-md;
     margin: 40px 0;
     background-color: $background;
     border-bottom: 0;
