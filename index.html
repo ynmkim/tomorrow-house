@@ -2018,6 +2018,124 @@
               </div>
             </section>
           </div>
+
+          <div class="col-lg-4 lg-only">
+            <form
+              class="order-form floating-order-form"
+              action="/"
+              method="post"
+            >
+              <div class="order-inputs">
+                <div class="select-group is-active">
+                  <select
+                    class="form-select"
+                    id="floating-order-form-select-01"
+                    required
+                  >
+                    <option value="1">선택</option>
+                    <option value="1">선택 사항 1</option>
+                    <option value="2">선택 사항 2</option>
+                    <option value="3">선택 사항 3</option>
+                    <option value="4">선택 사항 4</option>
+                    <option value="5">선택 사항 5</option>
+                  </select>
+                  <i class="ic-caret" aria-hidden></i>
+                </div>
+
+                <div class="select-group">
+                  <select
+                    class="form-select"
+                    id="floating-order-form-select-02"
+                  >
+                    <option value="1">추가상품 (선택)</option>
+                    <option value="2">선택 사항 2</option>
+                    <option value="3">선택 사항 3</option>
+                    <option value="4">선택 사항 4</option>
+                    <option value="5">선택 사항 5</option>
+                  </select>
+                  <i class="ic-caret" aria-hidden></i>
+                </div>
+              </div>
+
+              <div class="order-checkouts">
+                <ul class="checkout-list">
+                  <li class="checkout-item">
+                    <div class="checkout-card">
+                      <h4 class="checkout-title">
+                        추가상품 - 맛있는 제주 감귤을 직배송 / 제주도 귤 판매
+                        1위 믿고 구매하세요.
+                      </h4>
+
+                      <button
+                        class="delete-button"
+                        type="button"
+                        aria-label="삭제하기"
+                      >
+                        <i class="ic-close" aria-hidden></i>
+                      </button>
+
+                      <div class="checkout-controls">
+                        <div class="checkout-select">
+                          <select id="floating-order-form-checkout-item-01">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                          <i class="ic-caret" aria-hidden></i>
+                        </div>
+
+                        <output for="floating-order-form-checkout-item-01">
+                          <div class="price-16">
+                            <strong class="number">32,900</strong>
+                            <span class="won">원</span>
+                          </div>
+                        </output>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <dl class="order-summary">
+                <dt>주문금액</dt>
+                <dd>
+                  <output
+                    for="floating-order-form-select-01 floating-order-form-select-02"
+                  >
+                    <div class="price-20">
+                      <strong class="number">0</strong>
+                      <span class="won">원</span>
+                    </div>
+                  </output>
+                </dd>
+              </dl>
+
+              <div class="button-group">
+                <button
+                  class="bookmark-button btn-55"
+                  type="button"
+                  aria-label="북마크 추가"
+                >
+                  <i class="ic-bookmark" aria-hidden></i>
+                </button>
+                <!-- <button
+                  class="bookmark-button btn-55 is-active"
+                  type="button"
+                  aria-label="북마크 해제"
+                >
+                  <i class="ic-bookmark-filled" aria-hidden></i>
+                </button> -->
+                <button type="button" class="btn-outlined btn-55">
+                  장바구니
+                </button>
+                <button type="submit" class="btn-fill-primary btn-55">
+                  바로구매
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -2330,7 +2448,7 @@
       </div>
     </aside>
 
-    <aside class="order-form-modal lg-hidden is-open">
+    <aside class="order-form-modal lg-hidden">
       <h2 class="visually-hidden">주문창</h2>
       <form class="order-form" action="/" method="post">
         <div class="container">
