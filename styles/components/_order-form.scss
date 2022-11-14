@@ -38,7 +38,7 @@
     @include flexbox(start, center);
 
     button {
-      flex: 1;
+      flex: 1 1 0;
       margin-right: 8px;
 
       &:last-child {
