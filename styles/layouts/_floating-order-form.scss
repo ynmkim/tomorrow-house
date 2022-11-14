@@ -1,0 +1,46 @@
+.floating-order-form {
+  height: 700px; //TEMP
+  @include column-flexbox(start, start);
+
+  > * {
+    width: 100%;
+  }
+
+  .order-input,
+  .order-summary,
+  .button-group {
+    flex: 0 0 auto;
+  }
+
+  .order-checkouts {
+    flex-grow: 1;
+    overflow-y: auto;
+    @include no-scrollbar();
+  }
+
+  .button-group {
+    .bookmark-button {
+      flex: 0 0 55px;
+      width: 55px;
+      height: 55px;
+      border: 1px solid $border;
+      border-radius: 4px;
+      transition: background-color 300ms ease-in-out;
+
+      &:hover {
+        background-color: $background;
+      }
+
+      i {
+        font-size: 32px;
+        color: $primary;
+      }
+
+      &.is-active {
+        i {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
