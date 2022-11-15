@@ -1,0 +1,90 @@
+.bookmark-toast {
+  $close-button-size: 36px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: $bookmark-toast-level;
+  @include flexbox(between, center);
+  display: none;
+  width: 100%;
+  height: 56px;
+  padding: 0 $grid-margin 0 $close-button-size;
+  background-color: $white;
+  box-shadow: $popup-reversed-shadow;
+
+  &.is-active {
+    display: flex;
+  }
+
+  .close-button {
+    @include position-center-y(absolute);
+    left: 0;
+    @include inline-flexbox(center, center);
+    width: $close-button-size;
+    height: $close-button-size;
+
+    i {
+      font-size: 20px;
+      color: $tertiary;
+    }
+
+    &:active {
+      i {
+        color: $secondary;
+      }
+    }
+  }
+
+  &-title {
+    @include text-style(13, $primary);
+    font-weight: 400;
+  }
+
+  .button-group {
+    @include flexbox(end, center);
+
+    a {
+      margin-right: 4px;
+    }
+
+    a,
+    button {
+      white-space: nowrap;
+    }
+  }
+
+  @include responsive(D) {
+    @include position-center-x(fixed);
+    bottom: 40px;
+    max-width: 480px;
+    height: 80px;
+    padding: 0 20px 0 56px;
+    border-radius: 8px;
+    box-shadow: $popup-shadow;
+
+    .close-button {
+      left: (56px - $close-button-size) / 2;
+
+      i {
+        font-size: 24px;
+      }
+
+      &:hover {
+        i {
+          color: $secondary;
+        }
+      }
+    }
+
+    &-title {
+      @include text-style(16);
+    }
+
+    .button-group {
+      a {
+        margin-right: 8px;
+      }
+    }
+  }
+}
