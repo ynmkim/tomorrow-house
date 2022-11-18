@@ -38,3 +38,48 @@ function scrollToTabPanel() {
     behavior: 'smooth',
   })
 }
+
+// 스크롤 이벤트
+// 사전 정보: 각 tabPanel의 y축 위치 (문서의 시작점에서부터 얼마나 아래에 있는지)
+// 요소의 y축 위치 = window.scrollY + element.getBoundingClientRect().top
+
+const productTabPanelIdList = [
+  'product-description',
+  'product-review',
+  'product-inquiry',
+  'product-shipment',
+  'product-recommendation',
+]
+
+const productTabPanelList = productTabPanelIdList.map((panelID) => {
+  const tabPanel = document.querySelector(`#${panelID}`)
+
+  return tabPanel
+})
+
+const productTabPanelPositionMap = {}
+
+// console.log(productTabPanelList)
+
+function detectTabPanelPosition() {
+  // 각각의 tabPanel의 y축 위치를 찾는다
+  // producTabPanelPositionMap에 그 값을 없데이트
+  // ex
+  // {
+  //   'product-description': 1000,
+  //   'product-review': 3000,
+  //    ...
+  // }
+
+  productTabPanelList.forEach((panel) => {
+    const id = panel.getAttribute('id') // 패널의 id 값
+    const position = window.scrollY + panel.getBoundingClientRect().top // y축 위치
+
+    productTabPanelPositionMap[id] = position
+  })
+
+  console.log(productTabPanelPositionMap)
+}
+
+window.addEventListener('load', detectTabPanelPosition)
+window.addEventListener('resize', detectTabPanelPosition)
