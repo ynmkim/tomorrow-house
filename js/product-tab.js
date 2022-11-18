@@ -6,16 +6,22 @@ const TOP_HEADER_MOBILE = 50 + 40 + 40
 // console.log(productTabButtonList)
 
 let currentActiveTab = productTab.querySelector('.is-active')
+let disabledUpdating = false
 
 // 탭 활성화
 function toggleActiveTab() {
   const tabItem = this.parentNode
 
   if (currentActiveTab !== tabItem) {
+    disabledUpdating = true
     tabItem.classList.add('is-active')
     currentActiveTab.classList.remove('is-active')
     currentActiveTab = tabItem
     // console.log(currentActiveTab)
+
+    setTimeout(() => {
+      disabledUpdating = false
+    }, 1000)
   }
 }
 
@@ -79,6 +85,7 @@ function detectTabPanelPosition() {
   })
 
   // console.log(productTabPanelPositionMap)
+  updateActiveTabOnScroll()
 }
 
 window.addEventListener('load', detectTabPanelPosition)
@@ -86,6 +93,9 @@ window.addEventListener('resize', detectTabPanelPosition)
 window.addEventListener('scroll', updateActiveTabOnScroll)
 
 function updateActiveTabOnScroll() {
+  if (disabledUpdating) {
+    return
+  }
   // 스크롤 위치에 따라서 activeTab 업데이트
   // 1. 현재 유저가 얼만큼 스크롤를 했는지 -> window.scrollY
   // 2. 각 tabPanel y축 위치 -> productTabPanelPositionMap
@@ -107,12 +117,24 @@ function updateActiveTabOnScroll() {
     newActiveTab = productTabButtonList[0]
   }
 
+  // 추가: 페이지 끝까지 스크롤을 한 경우 newActiveTab = productTabButtonList[4]
+  // window.scrollY + window.innerHeight === body의 전체 height와 같은 경우
+  // window.innerWidth < 1200 product-floating 때문에 생긴 margin-bottom 56px
+
+  const bodyHeight =
+    document.body.offsetHeight + (window.innerWidth < 1200 ? 56 : 0)
+  if (window.scrollY + window.innerHeight === bodyHeight) {
+    newActiveTab = productTabButtonList[4]
+  }
+
   if (newActiveTab) {
     newActiveTab = newActiveTab.parentNode
 
     if (newActiveTab !== currentActiveTab) {
       newActiveTab.classList.add('is-active')
-      currentActiveTab.classList.remove('is-active')
+      if (currentActiveTab !== null) {
+        currentActiveTab.classList.remove('is-active')
+      }
       currentActiveTab = newActiveTab
     }
   }
