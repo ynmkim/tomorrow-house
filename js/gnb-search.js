@@ -7,36 +7,61 @@ const deleteAllButton = gnbSearchHistory.querySelector(
 const gnbSearchHistoryList = gnbSearchHistory.querySelector(
   '.search-history-list'
 )
+const deleteButtonList = gnbSearchHistoryList.querySelectorAll('.delete-button')
+
+// 반복 작업 리팩토링 함수
+function closeGnbSearchHistory() {
+  gnbSearchHistory.classList.remove('is-active')
+  window.removeEventListener('click', closeSearchHistoryOnClickOutside)
+}
 
 function openGnbSearchHistory() {
-  // if (gnbSearchHistoryList.children.length !== 0) {
-  //   gnbSearchHistory.classList.add('is-active')
-  // }
-
   if (gnbSearchHistoryList.children.length === 0) {
     return
   }
 
-  gnbSearchHistory.classList.add('is-active')
-
   if (!gnbSearchHistory.classList.contains('is-active')) {
     window.removeEventListener('click', closeSearchHistoryOnClickOutside)
   }
+
+  gnbSearchHistory.classList.add('is-active')
+
+  // if (gnbSearchHistoryList.children.length !== 0) {
+  //   gnbSearchHistory.classList.add('is-active')
+  // }
 }
 
 function closeSearchHistoryOnClickOutside(e) {
+  // console.log('close!')
   if (!gnbSearch.contains(e.target)) {
-    gnbSearchHistory.classList.remove('is-active')
+    closeGnbSearchHistory()
   }
 }
 
-function deleteAllSearchHistoryItem() {
+function deleteAllSearchHistoryItems() {
   gnbSearchHistoryList.innerHTML = ''
-  gnbSearchHistory.classList.remove('is-active')
+  closeGnbSearchHistory()
+}
+
+function deleteSearchHistoryItem(e) {
+  // console.log('delete!')
+  const itemToDelete = this.parentNode
+
+  gnbSearchHistoryList.removeChild(itemToDelete)
+
+  e.stopPropagation()
+
+  if (gnbSearchHistoryList.children.length === 0) {
+    closeGnbSearchHistory()
+  }
 }
 
 gnbSearchInput.addEventListener('focus', openGnbSearchHistory)
 
 window.addEventListener('click', closeSearchHistoryOnClickOutside)
 
-deleteAllButton.addEventListener('click', deleteAllSearchHistoryItem)
+deleteAllButton.addEventListener('click', deleteAllSearchHistoryItems)
+
+deleteButtonList.forEach(function (button) {
+  button.addEventListener('click', deleteSearchHistoryItem)
+})
