@@ -16,8 +16,4 @@
       color: $blue;
     }
   }
-
-  @include responsive(T) {
-    padding: 16px 0;
-  }
 }
